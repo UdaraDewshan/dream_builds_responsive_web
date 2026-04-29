@@ -16,3 +16,39 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--moonlit-grey);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--dark-space);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(242, 240, 234, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 15px 5%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
