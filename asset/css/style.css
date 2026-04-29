@@ -145,3 +145,21 @@ header.scrolled {
     color: #4a4a4a; 
 }
 
+.btn-primary {
+    display: inline-block;
+    background-color: var(--mocha-mousse);
+    color: #ffffff;
+    padding: 15px 40px;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(168, 133, 111, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #8c6a56;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(168, 133, 111, 0.4);
+}
