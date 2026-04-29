@@ -253,3 +253,64 @@ header.scrolled {
 .card-link:hover span {
     margin-left: 10px;
 }
+
+footer {
+    background-color: var(--dark-space);
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.footer-content h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    color: #a0a0a0;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+
+@media (max-width: 767px) {
+    .menu-icon {
+        display: block;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    }
+
+    .nav-links.active {
+        max-height: 300px;
+        padding: 20px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
