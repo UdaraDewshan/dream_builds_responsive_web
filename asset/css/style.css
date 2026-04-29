@@ -1,10 +1,10 @@
 :root {
-    --mocha-mousse: #A8856F;
-    --ethereal-blue: #A0D4E0;
+    --mocha-mousse: #A8856F; 
+    --ethereal-blue: #A0D4E0; 
     --moonlit-grey: #F2F0EA;
-    --dark-space: #1A1A1A;
-    --text-main: #333333;
-    --text-muted: #666666;
+    
+    --text-main: #3a332e; 
+    --text-muted: #665f5a;
 
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
@@ -25,11 +25,9 @@ body {
     overflow-x: hidden;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: var(--font-heading);
-    color: var(--dark-space);
+    color: var(--text-main);
 }
 
 a {
@@ -52,7 +50,7 @@ header {
 
 header.scrolled {
     padding: 15px 5%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(168, 133, 111, 0.1);
 }
 
 .logo {
@@ -60,6 +58,7 @@ header.scrolled {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+    color: var(--text-main);
 }
 
 .logo span {
@@ -88,28 +87,34 @@ header.scrolled {
 .menu-icon {
     display: none;
     cursor: pointer;
-    color: var(--dark-space);
+    color: var(--text-main);
 }
 
 .hero {
     position: relative;
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(135deg, var(--moonlit-grey) 0%, var(--ethereal-blue) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 20px;
+    background-color: var(--moonlit-grey);
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, transparent 100%);
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(242, 240, 234, 0.85);
 }
 
 .hero-content {
@@ -132,7 +137,7 @@ header.scrolled {
 }
 
 .hero h1 {
-    color: var(--mocha-mousse);
+    color: var(--text-main);
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
     line-height: 1.1;
@@ -144,7 +149,7 @@ header.scrolled {
     font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 500;
     margin-bottom: 40px;
-    color: #4a4a4a;
+    color: var(--text-muted);
 }
 
 .btn-primary {
@@ -156,8 +161,10 @@ header.scrolled {
     font-family: var(--font-heading);
     font-weight: 600;
     letter-spacing: 1px;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(168, 133, 111, 0.3);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -185,7 +192,7 @@ header.scrolled {
 .title-line {
     width: 60px;
     height: 3px;
-    background-color: var(--ethereal-blue);
+    background-color: var(--mocha-mousse);
     margin: 15px auto 20px;
 }
 
@@ -204,32 +211,30 @@ header.scrolled {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     border-bottom: 4px solid transparent;
 }
 
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(168, 133, 111, 0.15);
-    border-bottom: 4px solid var(--ethereal-blue);
+    border-bottom: 4px solid var(--mocha-mousse);
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+    height: 300px;
 }
 
 .card-img {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
-.img-1 {
-    background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-}
-
-.img-2 {
-    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-}
-
-.img-3 {
-    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+.card:hover .card-img {
+    transform: scale(1.08);
 }
 
 .card-content {
@@ -265,59 +270,8 @@ header.scrolled {
     margin-left: 10px;
 }
 
-footer {
-    background-color: var(--dark-space);
-    color: #ffffff;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.footer-content h2 {
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-.footer-content p {
-    color: #a0a0a0;
-}
-
-.copyright {
-    margin-top: 30px;
-    font-size: 0.85rem;
-    color: #666;
-}
-
-
-@media (max-width: 767px) {
-    .menu-icon {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-links.active {
-        max-height: 300px;
-        padding: 20px 0;
-    }
-}
-
-/* --- 5. Booking Section (Form UI) --- */
 .booking-section {
     padding: 80px 5%;
-    /* Trust color from PDF guidelines */
     background-color: var(--ethereal-blue);
     display: flex;
     justify-content: center;
@@ -326,17 +280,16 @@ footer {
 .booking-container {
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 40px rgba(160, 212, 224, 0.4);
     display: grid;
     grid-template-columns: 1fr;
-    /* Mobile first: single column layout */
     overflow: hidden;
     max-width: 1000px;
     width: 100%;
 }
 
 .booking-content {
-    background-color: var(--dark-space);
+    background-color: var(--mocha-mousse);
     color: #ffffff;
     padding: 50px 30px;
     display: flex;
@@ -351,7 +304,7 @@ footer {
 }
 
 .booking-content p {
-    color: #cccccc;
+    color: var(--moonlit-grey);
     font-size: 1.05rem;
 }
 
@@ -396,8 +349,50 @@ footer {
 .booking-form .btn-primary {
     margin-top: 10px;
     width: 100%;
-    cursor: pointer;
-    border: none;
+}
+
+footer {
+    background-color: var(--text-main);
+    color: var(--moonlit-grey);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.footer-content h2 {
+    color: var(--mocha-mousse);
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    color: #b5b0ab;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #8c8681;
+}
+
+@media (max-width: 767px) {
+    .menu-icon {
+        display: block;
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%; left: 0; width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    }
+    .nav-links.active {
+        max-height: 300px;
+        padding: 20px 0;
+    }
 }
 
 @media (min-width: 768px) {
