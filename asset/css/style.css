@@ -163,3 +163,36 @@ header.scrolled {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(168, 133, 111, 0.4);
 }
+
+.projects-section {
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.title-line {
+    width: 60px;
+    height: 3px;
+    background-color: var(--ethereal-blue);
+    margin: 15px auto 20px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
